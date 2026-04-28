@@ -60,9 +60,19 @@
       "count": 1,
       "tokens": 0,
       "first_read": "2026-04-28T22:45:28.582Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/internal/server/exec.go": {
+      "count": 2,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:52:45.547Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/internal/server/server.go": {
+      "count": 2,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:52:45.557Z"
     }
   },
   "anatomy_hits": 1,
-  "anatomy_misses": 8,
-  "repeated_reads_warned": 0
+  "anatomy_misses": 10,
+  "repeated_reads_warned": 2
 }

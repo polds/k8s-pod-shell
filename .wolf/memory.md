@@ -9,3 +9,5 @@
 | 15:45 | Created chart/latest/tests/role_test.yaml | — | ~153 |
 | 15:45 | Created .tool-versions | — | ~10 |
 | 15:45 | Created chart/latest/values.yaml | — | ~160 |
+| 15:52 | Created internal/server/exec.go | — | ~832 |
+| 15:52 | Created internal/server/server.go | — | ~1286 |

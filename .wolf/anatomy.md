@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T22:45:40.094Z
-> Files: 11 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T22:52:52.583Z
+> Files: 13 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -26,6 +26,11 @@
 ## chart/latest/tests/
 
 - `role_test.yaml` (~153 tok)
+
+## internal/server/
+
+- `exec.go` — Struct: controlMessage (~832 tok)
+- `server.go` — HTTP handlers: writeJSON (~1286 tok)
 
 ## web/
 
