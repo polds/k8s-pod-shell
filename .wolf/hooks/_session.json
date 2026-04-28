@@ -90,9 +90,19 @@
       "count": 1,
       "tokens": 0,
       "first_read": "2026-04-28T22:59:27.500Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/web/tsconfig.json": {
+      "count": 2,
+      "tokens": 0,
+      "first_read": "2026-04-28T23:07:53.844Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/web/package.json": {
+      "count": 2,
+      "tokens": 210,
+      "first_read": "2026-04-28T23:07:54.301Z"
     }
   },
   "anatomy_hits": 1,
-  "anatomy_misses": 13,
-  "repeated_reads_warned": 7
+  "anatomy_misses": 14,
+  "repeated_reads_warned": 9
 }

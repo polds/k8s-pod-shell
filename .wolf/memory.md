@@ -20,3 +20,5 @@
 | 16:01 | Created .github/workflows/pr.yml | — | ~219 |
 | 16:01 | Created .github/workflows/main.yml | — | ~351 |
 | 16:02 | Created .github/workflows/release.yml | — | ~1316 |
+| 16:08 | Created web/package.json | — | ~219 |
+| 16:08 | Created web/tsconfig.json | — | ~82 |

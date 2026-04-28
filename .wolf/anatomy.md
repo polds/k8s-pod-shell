@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T23:02:02.202Z
-> Files: 18 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T23:08:04.282Z
+> Files: 19 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -45,7 +45,8 @@
 
 ## web/
 
-- `package.json` — Node.js package manifest (~210 tok)
+- `package.json` — Node.js package manifest (~219 tok)
+- `tsconfig.json` — TypeScript configuration (~82 tok)
 
 ## web/src/
 
