@@ -11,3 +11,9 @@
 | 15:45 | Created chart/latest/values.yaml | — | ~160 |
 | 15:52 | Created internal/server/exec.go | — | ~832 |
 | 15:52 | Created internal/server/server.go | — | ~1286 |
+| 15:56 | Created .github/workflows/release.yml | — | ~820 |
+| 15:56 | Created docs/RELEASING.md | — | ~358 |
+| 15:56 | Created README.md | — | ~449 |
+| 15:59 | Created .github/workflows/release.yml | — | ~1302 |
+| 15:59 | Created CHANGELOG.md | — | ~107 |
+| 15:59 | Created docs/RELEASING.md | — | ~423 |

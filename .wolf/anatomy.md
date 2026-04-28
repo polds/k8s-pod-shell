@@ -1,15 +1,16 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T22:52:52.583Z
-> Files: 13 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T22:59:31.834Z
+> Files: 16 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.gitignore` — Git ignore rules (~150 tok)
 - `.tool-versions` (~10 tok)
+- `CHANGELOG.md` — Changelog (~100 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
 - `LICENSE` — Project license (~3029 tok)
-- `README.md` — Project documentation (~16 tok)
+- `README.md` — Project documentation (~421 tok)
 
 ## .claude/
 
@@ -19,6 +20,10 @@
 
 - `openwolf.md` (~313 tok)
 
+## .github/workflows/
+
+- `release.yml` — CI: release (~1302 tok)
+
 ## chart/latest/
 
 - `values.yaml` (~160 tok)
@@ -26,6 +31,10 @@
 ## chart/latest/tests/
 
 - `role_test.yaml` (~153 tok)
+
+## docs/
+
+- `RELEASING.md` — Releasing (~397 tok)
 
 ## internal/server/
 
