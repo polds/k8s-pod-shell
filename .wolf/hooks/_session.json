@@ -1,0 +1,68 @@
+{
+  "session_id": "",
+  "files_read": {
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/SKILL.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:19.740Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/prose.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:27.273Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/examples/29-captains-chair/index.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:27.332Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/examples/29-captains-chair/captain.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:34.638Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/examples/29-captains-chair/researcher.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:34.671Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/examples/29-captains-chair/tester.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:34.691Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/examples/29-captains-chair/coder.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:34.736Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.claude/skills/open-prose/examples/29-captains-chair/critic.md": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:38:34.738Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/README.md": {
+      "count": 1,
+      "tokens": 16,
+      "first_read": "2026-04-28T22:39:54.871Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/.tool-versions": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:39:57.796Z"
+    },
+    "/Users/peter/.cursor/projects/Volumes-workplace-github-com-polds-k8s-pod-shell/agent-tools/58d3edc1-5f90-41ed-95d9-4132ab018e40.txt": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:44:44.860Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/chart/latest/tests/role_test.yaml": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-28T22:45:28.582Z"
+    }
+  },
+  "anatomy_hits": 1,
+  "anatomy_misses": 8,
+  "repeated_reads_warned": 0
+}
