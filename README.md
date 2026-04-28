@@ -50,6 +50,17 @@ helm install kubeshell-web ./chart/latest \
   --set target.name=foo
 ```
 
+## Release strategy
+
+Versioned releases are driven by semver git tags and publish both container and Helm chart artifacts for the same version.
+
+- Tag format: `vX.Y.Z`
+- Container tags: `vX.Y.Z`, `X.Y.Z`, and `latest`
+- Chart version + appVersion: `X.Y.Z` (packaged at release time)
+- Chart push target: `oci://ghcr.io/<owner>/charts`
+
+Detailed runbook: `docs/RELEASING.md`
+
 ## Out of scope (v1)
 
 - In-app authn/authz

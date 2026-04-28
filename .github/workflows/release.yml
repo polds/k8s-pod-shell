@@ -2,6 +2,11 @@ name: release
 on:
   push:
     tags: [ "v*.*.*" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Semver without v prefix (example: 1.2.3)"
+        required: true
 
 jobs:
   release:
@@ -12,6 +17,24 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - name: Resolve release version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
+            RAW_VERSION="${{ inputs.version }}"
+            TAG="v${RAW_VERSION}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+            RAW_VERSION="${TAG#v}"
+          fi
+          if [[ ! "${TAG}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid release tag: ${TAG}" >&2
+            exit 1
+          fi
+          echo "tag=${TAG}" >> "${GITHUB_OUTPUT}"
+          echo "version=${RAW_VERSION}" >> "${GITHUB_OUTPUT}"
       - uses: actions/setup-go@v5
         with:
           go-version: "1.25.x"
@@ -33,15 +56,82 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/${{ github.repository_owner }}/kubeshell-web:${{ github.ref_name }}
+            ghcr.io/${{ github.repository_owner }}/kubeshell-web:${{ steps.version.outputs.tag }}
+            ghcr.io/${{ github.repository_owner }}/kubeshell-web:${{ steps.version.outputs.version }}
             ghcr.io/${{ github.repository_owner }}/kubeshell-web:latest
       - uses: sigstore/cosign-installer@v3
-      - run: cosign sign --yes ghcr.io/${{ github.repository_owner }}/kubeshell-web:${{
-          github.ref_name }}
+      - name: Sign release image
+        run: cosign sign --yes ghcr.io/${{ github.repository_owner }}/kubeshell-web:${{
+          steps.version.outputs.tag }}
       - uses: azure/setup-helm@v4
-      - run: helm package chart/latest
-      - run: helm push kubeshell-web-*.tgz oci://ghcr.io/${{ github.repository_owner
-          }}/charts
+      - name: Package chart with release version
+        run: |
+          helm package chart/latest \
+            --version "${{ steps.version.outputs.version }}" \
+            --app-version "${{ steps.version.outputs.version }}"
+      - name: Push chart to OCI registry
+        run: helm push "kubeshell-web-${{ steps.version.outputs.version }}.tgz"
+          "oci://ghcr.io/${{ github.repository_owner }}/charts"
+      - name: Build release notes preamble
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="${{ steps.version.outputs.tag }}"
+          OWNER="${{ github.repository_owner }}"
+          IMAGE="ghcr.io/${OWNER}/kubeshell-web:${VERSION}"
+          CHART_REF="oci://ghcr.io/${OWNER}/charts/kubeshell-web"
+
+          cat > RELEASE_BODY.md <<EOF
+          ## Release Assets
+
+          - Container image: \`${IMAGE}\`
+          - Helm chart: \`${CHART_REF}\` (version \`${VERSION}\`)
+
+          ## Install Snippets
+
+          ### Docker image
+
+          \`\`\`bash
+          docker pull ${IMAGE}
+          \`\`\`
+
+          ### Helm (OCI)
+
+          \`\`\`bash
+          helm upgrade --install kubeshell-web ${CHART_REF} \\
+            --version ${VERSION} \\
+            --namespace demo --create-namespace \\
+            --set target.kind=Deployment \\
+            --set target.name=foo
+          \`\`\`
+          EOF
+
+          if [[ -f CHANGELOG.md ]]; then
+            awk -v tag="${TAG}" -v ver="${VERSION}" '
+              BEGIN { capture=0 }
+              /^## / {
+                if (capture==1) exit
+                if ($0 ~ "^## \\[" tag "\\]" || $0 ~ "^## \\[" ver "\\]") capture=1
+              }
+              capture==1 { print }
+            ' CHANGELOG.md > CHANGELOG_SECTION.md
+
+            if [[ -s CHANGELOG_SECTION.md ]]; then
+              {
+                echo
+                echo "## Changelog"
+                echo
+                cat CHANGELOG_SECTION.md
+              } >> RELEASE_BODY.md
+            fi
+          fi
       - uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Release ${{ steps.version.outputs.tag }}
+          files: |
+            kubeshell-web-${{ steps.version.outputs.version }}.tgz
+          body_path: RELEASE_BODY.md
+          append_body: true
           generate_release_notes: true
