@@ -72,13 +72,13 @@
       "first_read": "2026-04-28T22:52:45.557Z"
     },
     "/Volumes/workplace/github.com/polds/k8s-pod-shell/.github/workflows/pr.yml": {
-      "count": 1,
+      "count": 2,
       "tokens": 0,
       "first_read": "2026-04-28T22:55:56.003Z"
     },
     "/Volumes/workplace/github.com/polds/k8s-pod-shell/.github/workflows/release.yml": {
-      "count": 2,
-      "tokens": 0,
+      "count": 4,
+      "tokens": 1302,
       "first_read": "2026-04-28T22:55:56.084Z"
     },
     "/Volumes/workplace/github.com/polds/k8s-pod-shell/docs/RELEASING.md": {
@@ -94,5 +94,5 @@
   },
   "anatomy_hits": 1,
   "anatomy_misses": 13,
-  "repeated_reads_warned": 4
+  "repeated_reads_warned": 7
 }

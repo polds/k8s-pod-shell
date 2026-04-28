@@ -17,3 +17,6 @@
 | 15:59 | Created .github/workflows/release.yml | — | ~1302 |
 | 15:59 | Created CHANGELOG.md | — | ~107 |
 | 15:59 | Created docs/RELEASING.md | — | ~423 |
+| 16:01 | Created .github/workflows/pr.yml | — | ~219 |
+| 16:01 | Created .github/workflows/main.yml | — | ~351 |
+| 16:02 | Created .github/workflows/release.yml | — | ~1316 |

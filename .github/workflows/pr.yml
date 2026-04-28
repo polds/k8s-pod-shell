@@ -20,7 +20,7 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v7
       - name: Frontend deps
-        run: cd web && npm ci
+        run: cd web && npm install --no-audit --no-fund
       - name: Frontend checks
         run: cd web && npm run typecheck && npm run test
       - name: Setup Helm

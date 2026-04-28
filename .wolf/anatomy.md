@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T22:59:31.834Z
-> Files: 16 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T23:02:02.202Z
+> Files: 18 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -22,7 +22,9 @@
 
 ## .github/workflows/
 
-- `release.yml` — CI: release (~1302 tok)
+- `main.yml` — CI: main (~351 tok)
+- `pr.yml` — CI: pr (~219 tok)
+- `release.yml` — CI: release (~1316 tok)
 
 ## chart/latest/
 
