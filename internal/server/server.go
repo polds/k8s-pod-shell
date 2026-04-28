@@ -100,7 +100,7 @@ func (s *Server) exec(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		return
 	}
-	defer conn.Close(websocket.StatusNormalClosure, "session ended")
+	defer func() { _ = conn.Close(websocket.StatusNormalClosure, "session ended") }()
 	conn.SetReadLimit(1024 * 1024)
 
 	ctx, cancel := context.WithTimeout(r.Context(), s.cfg.IdleTimeout)

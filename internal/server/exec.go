@@ -23,7 +23,7 @@ type controlMessage struct {
 func RunExecSession(ctx context.Context, conn *websocket.Conn, cs kubernetes.Interface, ns, pod, container string) error {
 	// Build stream readers/writers.
 	stdinR, stdinW := io.Pipe()
-	defer stdinR.Close()
+	defer func() { _ = stdinR.Close() }()
 
 	resizeQueue := &resizeEventQueue{ch: make(chan remotecommand.TerminalSize, 8)}
 	out := wsWriter{conn: conn}
@@ -34,7 +34,7 @@ func RunExecSession(ctx context.Context, conn *websocket.Conn, cs kubernetes.Int
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		defer stdinW.Close()
+		defer func() { _ = stdinW.Close() }()
 		for {
 			_, payload, err := conn.Read(ctx)
 			if err != nil {
