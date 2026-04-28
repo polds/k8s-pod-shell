@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kubeshell-web
+description: Web shell for pods in one workload
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

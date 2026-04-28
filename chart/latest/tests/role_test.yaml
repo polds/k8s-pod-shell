@@ -1,0 +1,23 @@
+suite: role rules
+templates:
+  - templates/role.yaml
+tests:
+  - it: deployment includes replicasets rule
+    set:
+      target.kind: Deployment
+      target.name: foo
+    asserts:
+      - contains:
+          path: rules
+          content:
+            apiGroups: [ "apps" ]
+            resources: [ "replicasets" ]
+  - it: statefulset excludes replicasets rule
+    set:
+      target.kind: StatefulSet
+      target.name: foo
+    asserts:
+      - notContains:
+          path: rules
+          content:
+            resources: [ "replicasets" ]

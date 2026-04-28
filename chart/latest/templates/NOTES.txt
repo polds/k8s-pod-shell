@@ -1,0 +1,7 @@
+1. Access your shell UI:
+{{- if eq .Values.service.type "LoadBalancer" }}
+  export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "kubeshell-web.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  echo http://${SERVICE_IP}:{{ .Values.service.port }}
+{{- else }}
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "kubeshell-web.fullname" . }} 8080:{{ .Values.service.port }}
+{{- end }}

@@ -1,0 +1,29 @@
+name: pr
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.x"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Go vet
+        run: go vet ./...
+      - name: Go test
+        run: go test -race -coverprofile=cover.out ./...
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v7
+      - name: Frontend deps
+        run: cd web && npm ci
+      - name: Frontend checks
+        run: cd web && npm run typecheck && npm run test
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+      - name: Helm lint
+        run: helm lint chart/latest
