@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-28T23:13:02.514Z
-> Files: 19 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-29T19:53:25.012Z
+> Files: 20 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -9,6 +9,7 @@
 - `.tool-versions` (~10 tok)
 - `CHANGELOG.md` — Changelog (~100 tok)
 - `CLAUDE.md` — OpenWolf (~57 tok)
+- `Dockerfile` — Docker container definition (~150 tok)
 - `LICENSE` — Project license (~3029 tok)
 - `README.md` — Project documentation (~421 tok)
 

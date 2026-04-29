@@ -10,7 +10,8 @@ WORKDIR /src
 COPY go.mod ./
 RUN go mod download
 COPY . .
-RUN mkdir -p cmd/kubeshell-web/web/dist && cp -R web/dist/* cmd/kubeshell-web/web/dist/
+COPY --from=web /src/web/dist ./cmd/kubeshell-web/web/dist
+RUN test -f ./cmd/kubeshell-web/web/dist/index.html
 RUN CGO_ENABLED=0 go build -o /out/kubeshell-web ./cmd/kubeshell-web
 
 FROM cgr.dev/chainguard/static:latest

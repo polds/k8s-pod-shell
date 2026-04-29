@@ -23,3 +23,5 @@
 | 16:08 | Created web/package.json | — | ~219 |
 | 16:08 | Created web/tsconfig.json | — | ~82 |
 | 16:13 | Created web/package.json | — | ~226 |
+| 12:52 | Created Dockerfile | — | ~136 |
+| 12:53 | Created Dockerfile | — | ~150 |

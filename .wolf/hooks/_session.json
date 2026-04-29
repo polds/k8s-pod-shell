@@ -100,9 +100,14 @@
       "count": 3,
       "tokens": 219,
       "first_read": "2026-04-28T23:07:54.301Z"
+    },
+    "/Volumes/workplace/github.com/polds/k8s-pod-shell/Dockerfile": {
+      "count": 2,
+      "tokens": 0,
+      "first_read": "2026-04-29T19:52:42.705Z"
     }
   },
   "anatomy_hits": 1,
-  "anatomy_misses": 14,
-  "repeated_reads_warned": 10
+  "anatomy_misses": 15,
+  "repeated_reads_warned": 11
 }
