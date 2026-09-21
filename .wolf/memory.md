@@ -25,3 +25,7 @@
 | 16:13 | Created web/package.json | — | ~226 |
 | 12:52 | Created Dockerfile | — | ~136 |
 | 12:53 | Created Dockerfile | — | ~150 |
+| 11:39 | Created internal/kube/pods.go | — | ~902 |
+| 11:39 | Created web/package.json | — | ~214 |
+| 11:39 | Created internal/kube/pods.go | — | ~876 |
+| 11:40 | Removed SelectorFromMap, @testing-library/react, root package-lock.json | internal/kube/pods.go, web/package.json, web/package-lock.json, package-lock.json | go test ./internal/kube ok; npm test ok | ~200 |

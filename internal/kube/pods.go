@@ -8,7 +8,6 @@ import (
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/kubernetes"
 )
 
@@ -126,8 +125,4 @@ func isPodReady(p *corev1.Pod) bool {
 		}
 	}
 	return false
-}
-
-func SelectorFromMap(m map[string]string) string {
-	return labels.Set(m).AsSelector().String()
 }
