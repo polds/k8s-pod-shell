@@ -84,10 +84,6 @@ func (s *Server) pods(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) exec(w http.ResponseWriter, r *http.Request) {
-	if !s.isAllowedOrigin(r.Header.Get("Origin")) {
-		http.Error(w, "origin not allowed", http.StatusForbidden)
-		return
-	}
 	pod := r.URL.Query().Get("pod")
 	if pod == "" {
 		http.Error(w, "pod query param required", http.StatusBadRequest)
@@ -143,18 +139,6 @@ func (s *Server) targetNamespace() string {
 		return s.cfg.TargetNS
 	}
 	return "default"
-}
-
-func (s *Server) isAllowedOrigin(origin string) bool {
-	if len(s.cfg.AllowedOrigins) == 0 {
-		return true
-	}
-	for _, o := range s.cfg.AllowedOrigins {
-		if o == origin {
-			return true
-		}
-	}
-	return false
 }
 
 func writeJSON(w http.ResponseWriter, v any) {
