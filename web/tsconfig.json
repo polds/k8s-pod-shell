@@ -6,7 +6,6 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "strict": true,
-    "types": ["node", "vitest/globals"],
     "noEmit": true
   },
   "include": ["src"]
