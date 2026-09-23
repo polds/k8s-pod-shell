@@ -30,3 +30,10 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# OpenWolf runtime/session noise (keep hooks + config tracked)
+.wolf/daemon.log
+.wolf/token-ledger.json
+.wolf/cron-state.json
+.wolf/designqc-report.json
+.wolf/suggestions.json

@@ -2,7 +2,6 @@ export const MOBILE_KEYS = [
   "Esc",
   "Tab",
   "Ctrl",
-  "Alt",
   "↑",
   "↓",
   "←",
@@ -18,11 +17,10 @@ export const MOBILE_KEYS = [
   "Ctrl+R"
 ] as const;
 
-export type ModifierState = { ctrl: boolean; alt: boolean };
+export type ModifierState = { ctrl: boolean };
 
 export function applyMobileKey(key: string, state: ModifierState): { output: string; state: ModifierState } {
   if (key === "Ctrl") return { output: "", state: { ...state, ctrl: true } };
-  if (key === "Alt") return { output: "", state: { ...state, alt: true } };
 
   let output = keyToSequence(key);
   if (state.ctrl && output.length === 1) {
@@ -30,7 +28,7 @@ export function applyMobileKey(key: string, state: ModifierState): { output: str
   } else if (key.startsWith("Ctrl+") && key.length === 6) {
     output = String.fromCharCode(key[5].charCodeAt(0) - 64);
   }
-  return { output, state: { ctrl: false, alt: false } };
+  return { output, state: { ctrl: false } };
 }
 
 function keyToSequence(key: string): string {
