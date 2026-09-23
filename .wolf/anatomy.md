@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-29T19:53:25.012Z
-> Files: 20 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-21T11:39:35.264Z
+> Files: 21 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -39,6 +39,10 @@
 
 - `RELEASING.md` — Releasing (~397 tok)
 
+## internal/kube/
+
+- `pods.go` — Struct: Target (~876 tok)
+
 ## internal/server/
 
 - `exec.go` — Struct: controlMessage (~832 tok)
@@ -46,7 +50,7 @@
 
 ## web/
 
-- `package.json` — Node.js package manifest (~226 tok)
+- `package.json` — Node.js package manifest (~214 tok)
 - `tsconfig.json` — TypeScript configuration (~82 tok)
 
 ## web/src/
