@@ -7,7 +7,6 @@ describe("mobile key ordering", () => {
       "Esc",
       "Tab",
       "Ctrl",
-      "Alt",
       "↑",
       "↓",
       "←",
@@ -27,7 +26,7 @@ describe("mobile key ordering", () => {
 
 describe("modifier behavior", () => {
   it("supports sticky one-shot ctrl", () => {
-    const armed = applyMobileKey("Ctrl", { ctrl: false, alt: false });
+    const armed = applyMobileKey("Ctrl", { ctrl: false });
     expect(armed.state.ctrl).toBe(true);
     const fired = applyMobileKey("c", armed.state);
     expect(fired.output.charCodeAt(0)).toBe(3);

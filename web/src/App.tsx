@@ -18,7 +18,7 @@ export function App() {
   const [container, setContainer] = useState("");
   const [info, setInfo] = useState<Info | null>(null);
   const [status, setStatus] = useState("idle");
-  const [modifier, setModifier] = useState({ ctrl: false, alt: false });
+  const [modifier, setModifier] = useState({ ctrl: false });
 
   useEffect(() => {
     Promise.all([fetch("/api/v1/pods").then((r) => r.json()), fetch("/api/v1/info").then((r) => r.json())]).then(
